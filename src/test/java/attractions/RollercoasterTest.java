@@ -11,12 +11,14 @@ public class RollercoasterTest {
     RollerCoaster rollerCoaster;
     Visitor visitor1;
     Visitor visitor2;
+    Visitor visitor3;
 
     @Before
     public void setUp() {
-        rollerCoaster = new RollerCoaster("Blue Ridge", 10);
+        rollerCoaster = new RollerCoaster(8.40, "Blue Ridge", 10);
         visitor1 = new Visitor(20, 190, 132);
         visitor2 = new Visitor(34, 140, 120);
+        visitor3 = new Visitor(34, 200, 120);
     }
 
     @Test
@@ -42,5 +44,15 @@ public class RollercoasterTest {
     @Test
     public void canNotRideCoaster() {
         assertEquals(false, rollerCoaster.isAllowedTo(visitor2));
+    }
+
+    @Test
+    public void canGetPrice() {
+        assertEquals(8.40, rollerCoaster.defaultPrice(), 0.0);
+    }
+
+    @Test
+    public void canGetPriceForTallPeople() {
+        assertEquals(16.80, rollerCoaster.priceForVisitor(visitor3), 0.0);
     }
 }
