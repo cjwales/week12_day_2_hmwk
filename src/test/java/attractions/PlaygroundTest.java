@@ -15,7 +15,7 @@ public class PlaygroundTest {
     public void setUp() throws Exception {
         playground = new Playground("Fun Zone", 7);
         visitor = new Visitor(15,170, 10);
-        visitor = new Visitor(12, 120, 2);
+        visitor2 = new Visitor(12, 120, 2);
     }
 
     @Test
